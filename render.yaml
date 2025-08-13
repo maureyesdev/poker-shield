@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: poker-shield
+    runtime: node
+    plan: free
+    buildCommand: npm ci && npm run build
+    startCommand: node dist/main.js
+    rootDir: server
+    envVars:
+      - key: NODE_ENV
+        value: production
+    autoDeploy: true
